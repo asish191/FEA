@@ -16,11 +16,11 @@ const LoginPage = () => {
   });
 
   const loginButtonProps = useSpring({
-    bordeBottom: registrationFormStatus ? "solid 0px transparent" : "solid 2px white"
+    borderBottom: registrationFormStatus ? "solid 0px transparent" : "solid 2px white"
   })
 
   const registerButtonProps = useSpring({
-    bordeBottom: registrationFormStatus ? "solid 2px white" : "solid 0px transparent"
+    borderBottom: registrationFormStatus ? "solid 2px white" : "solid 0px transparent"
   })
 
   const loginClicked = () => {

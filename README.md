@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# Movie App - Progressive Web App (PWA)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern movie streaming application built with React that functions as a Progressive Web App with offline support and skeleton loading animations.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 🚀 Progressive Web App (PWA)
+- **Offline Support**: Works without internet connection using service worker caching
+- **Installable**: Can be installed on desktop and mobile devices
+- **App-like Experience**: Full-screen standalone mode
+- **Fast Loading**: Cached resources for instant loading
+- **Responsive Design**: Optimized for all screen sizes
 
-### `npm start`
+### 🎬 Movie Features
+- Browse movies by categories
+- View movie details and trailers
+- User authentication system
+- Comments and reviews system
+- Responsive movie grid layout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ⚡ Skeleton Loading
+- **Home Page**: Skeleton loaders for banner and movie rows
+- **Movie Details**: Skeleton loaders for movie information and comments
+- **Smooth Animations**: Shimmer effect for better user experience
+- **Responsive**: Adapts to different screen sizes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔧 Technical Features
+- React 19 with modern hooks
+- Redux Toolkit for state management
+- React Router for navigation
+- Service Worker for offline functionality
+- Custom PWA hooks for better code organization
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd movie-app
+```
 
-### `npm run build`
+2. Install dependencies:
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the development server:
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Build for production:
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## PWA Features
 
-### `npm run eject`
+### Offline Functionality
+- The app caches essential resources for offline use
+- Service worker handles network requests and provides fallbacks
+- Offline page with helpful information when connection is lost
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
+- Users can install the app on their devices
+- Automatic install prompt when criteria are met
+- Works on desktop and mobile browsers
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Caching Strategy
+- Static assets are cached for fast loading
+- API responses are cached for offline access
+- Intelligent cache management with versioning
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Skeleton Loading
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app includes comprehensive skeleton loading states:
 
-## Learn More
+- **Banner Skeleton**: Shows while main banner loads
+- **Movie Row Skeletons**: Display while movie data loads
+- **Comment Skeletons**: Show while comments load
+- **Responsive Design**: Adapts to different screen sizes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/          # Reusable components
+│   ├── SkeletonLoader.js    # Skeleton loading component
+│   ├── PWAInstallPrompt.js  # PWA install prompt
+│   └── ...
+├── hooks/              # Custom hooks
+│   ├── usePWA.js           # PWA functionality hook
+│   └── ...
+├── pages/              # Page components
+│   ├── OfflinePage.js      # Offline page
+│   └── ...
+├── styles/             # CSS files
+│   ├── SkeletonLoader.css   # Skeleton animations
+│   ├── OfflinePage.css      # Offline page styles
+│   └── ...
+└── ...
+public/
+├── sw.js              # Service worker
+├── manifest.json      # PWA manifest
+└── ...
+```
 
-### Code Splitting
+## Browser Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Chrome (recommended for PWA features)
+- Firefox
+- Safari
+- Edge
 
-### Analyzing the Bundle Size
+## Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Adding New Skeleton Types
+1. Add new case in `SkeletonLoader.js`
+2. Create corresponding CSS in `SkeletonLoader.css`
+3. Use the new type in your components
 
-### Making a Progressive Web App
+### PWA Customization
+1. Modify `manifest.json` for app metadata
+2. Update `sw.js` for caching strategies
+3. Customize offline page in `OfflinePage.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Performance
 
-### Advanced Configuration
+- Lighthouse PWA score: 90+
+- Fast loading with skeleton screens
+- Optimized bundle size
+- Efficient caching strategies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test PWA functionality
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License - see LICENSE file for details

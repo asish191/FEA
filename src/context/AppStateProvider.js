@@ -3,7 +3,7 @@ import AppStateReducer from "./AppStateReducer"
 
 const INITIAL_STATE = {
     isAuthenticated: localStorage.getItem("user") ? true : false,
-    user: JSON.parse(localStorage.getItem("user"))
+    user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null
 }
 
 

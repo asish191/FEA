@@ -1,0 +1,158 @@
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pwa-install-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.pwa-install-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pwa-install-icon svg {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.pwa-install-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pwa-install-text h3 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.pwa-install-text p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.pwa-install-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pwa-install-btn, .pwa-dismiss-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pwa-install-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.pwa-install-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.pwa-dismiss-btn {
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.pwa-dismiss-btn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .pwa-install-prompt {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .pwa-install-content {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .pwa-install-text h3 {
+    font-size: 13px;
+  }
+  
+  .pwa-install-text p {
+    font-size: 11px;
+  }
+  
+  .pwa-install-btn, .pwa-dismiss-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .pwa-install-content {
+    background: rgba(30, 30, 30, 0.95);
+    border-color: rgba(102, 126, 234, 0.3);
+  }
+  
+  .pwa-install-text h3 {
+    color: #fff;
+  }
+  
+  .pwa-install-text p {
+    color: #ccc;
+  }
+  
+  .pwa-dismiss-btn {
+    color: #ccc;
+    border-color: #444;
+  }
+  
+  .pwa-dismiss-btn:hover {
+    background: #444;
+    color: #fff;
+  }
+} 
